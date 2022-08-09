@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TEST Portal Administracion...</title>
+    <link rel="preload" href="{% static 'frontweb/css/login-style.css' %}" as="style">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'frontweb/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'frontweb/css/login-style.css' %}">
+    <script src="{% static 'frontweb/js/scripts.js' %}"></script>
+</head>
+
+<body>
+    <div class="superContenedor">
+        <div class="titulo">
+            <h1>TEST PORTAL ADMINISTRACION INTERNA</h1>
+        </div>
+        <div class="descripcion">
+            <h2>En este portal se registran solicitudes, reclamos y respuestas a los requerimientos de la institución.
+            </h2>
+        </div>
+        <div class="punteo">
+            <ul>
+                <li>Formulario de Solicitud
+                <li>Formulario de Reclamos
+                <li>Formulario de Bienes y/o Servicios
+            </ul>
+        </div>
+
+        <div class="contenedor">
+            <div class="titulo">
+                <h1>Ingreso a TEST</h1>
+            </div>
+            <!--FORMULARIO-->
+            <form class="form" action="/ingresar/" method="POST"> {% csrf_token %}
+                <!--ESPACIO FOLIO Y FECHA-->
+                <div class="form_1">
+                    <input name="rut" id="rut" class="formulario--input__1" type="text" placeholder="RUT"
+                        oninput="chequeoRut(this);">
+                    <input name="paswd" class="formulario--input__2" type="password" placeholder="Password">
+
+                    <div class="boxdiv">
+                        <input type="checkbox" value="Recordar" id="cbox1" class="cbox1" />
+                        <label class="labelbox" for="cbox1">Recordar</label>
+                    </div>
+                    <div id="botonID" class="botonSubmit">
+                        <input class="boton" type="submit" value="Ingresar">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

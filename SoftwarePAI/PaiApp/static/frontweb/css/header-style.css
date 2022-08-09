@@ -1,0 +1,150 @@
+:root {
+    --colorFondo: #E5F5FF;
+    --colorFondoOscuro: #DEF2FF;
+    --borde: gray;
+    --bordeFocus: red;
+    --letra: #000000;
+    --blanco: #fff;
+    --negro: #000;
+    --rojo: red;
+}
+
+/* snippets */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    justify-content: center;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+fieldset {
+    border: none;
+}
+
+img {
+    height: 150px;
+    float: left;
+}
+
+p {
+    color: #000;
+}
+
+h1 {
+    justify-content: center;
+    display: flex;
+    margin-top: 2rem;
+    font-size: 3rem;
+    color: var(--letra);
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--negro);
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: var(--blanco);
+}
+
+h4 {
+    font-size: 1.5rem;
+    color: var(--blanco);
+}
+
+h5 {
+    justify-content: center;
+    display: flex;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: 3rem;
+    color: var(--blanco);
+    text-transform: uppercase;
+}
+
+header {
+    padding-left: 2rem;
+    margin: 0 auto;
+    background-color:mediumblue;
+    margin-bottom: 2rem;
+    height: 150px;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+label {
+    text-decoration: none;
+    font-weight: bolder;
+    cursor: pointer;
+    color: #000000;
+    font-size: 2rem;
+}
+
+.opciones{
+    display: grid;
+    width: 50%;
+    height: 150px;
+    grid-template-columns: 4;
+    grid-template-rows: 1;
+    gap: 1rem;
+    color: var(--negro);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    float: left;
+}
+
+.op--1:hover{
+    background-color: white;
+    color: mediumblue;
+}
+
+.op--2:hover{
+    background-color: white;
+    color: mediumblue;
+}
+.op--3:hover{
+    background-color: white;
+    color: mediumblue;
+}
+.op--4:hover{
+    background-color: white;
+    color: mediumblue;
+}
+
+@media (min-width: 768px) {
+    .op--1{
+        grid-column: 1;
+        grid-row: 1;
+
+    }
+    .op--2{
+        grid-column: 2;
+        grid-row: 1;
+
+    }
+    .op--3{
+        grid-column: 3;
+        grid-row: 1;
+
+    }
+    .op--4{
+        grid-column: 4;
+        grid-row: 1;
+
+    }
+}
