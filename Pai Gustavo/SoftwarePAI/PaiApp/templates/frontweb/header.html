@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TEST Portal Administracion...</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href="{% static 'frontweb/css/header-style.css' %}" as="style" />
+    <link rel="stylesheet" href="{% static 'frontweb/css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'frontweb/css/header-style.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'frontweb/js/scripts.js' %}"></script>
+
+    <!-- ESPACIO PARA IMPORTAR LAS LIBRERIAS DEL HEAD QUE VIENE -->
+    {% block head %} {% endblock %}
+</head>
+
+<body class='headbody'>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container logo-nav-container">
+            <img src="{% static 'frontweb/img/logo.jpg' %}" alt="Logo Principal" class="logo" />
+            <nav class="navigation">
+                <ul>
+                    <li>
+                        <a href="#" class="op--1"> <img src="{% static 'frontweb/img/avionpapel.png' %}"
+                                alt="Formularios" /> FORMULARIOS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="op--2"><img src="{% static 'frontweb/img/fichero.png' %}" alt="Gestion" />
+                            GESTION</a>
+                    </li>
+                    <li>
+                        <a href="#" class="op--3">REPORTES</a>
+                    </li>
+                    <li>
+                        <a href="#" class="op--4">ADMINISTRACION</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- FORMULARIOS O LO QUE CONTINUA -->
+    {% block content %} {% endblock %}
+</body>
+
+</html>

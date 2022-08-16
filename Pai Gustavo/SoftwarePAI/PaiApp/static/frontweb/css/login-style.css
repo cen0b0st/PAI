@@ -1,0 +1,246 @@
+:root {
+    --colorFondo: #E5F5FF;
+    --colorFondoOscuro: #DEF2FF;
+    --borde: gray;
+    --bordeFocus: red;
+    --letra: #000000;
+    --blanco: #fff;
+    --negro: #000;
+    --rojo: red;
+}
+
+
+/* snippets */
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    justify-content: center;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+/* Globals */
+
+body {
+    margin-top: 2.5rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+    text-align: center;
+    background-image: linear-gradient(0deg, #bffff1 100%, #bffff1 100%);
+}
+
+h1 {
+    justify-content: center;
+    display: flex;
+    margin-top: 2rem;
+    font-size: 3rem;
+    color: var(--letra);
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--negro);
+}
+
+input {
+    border-width: .1rem;
+    border-color: var(--negro);
+    border-radius: .4rem;
+    padding: 1rem;
+    width: 100%;
+    height: 60%;
+    max-height: 4rem;
+    color: var(--negro);
+    border-radius: .5rem;
+    border: .1rem solid var(--borde);
+}
+
+input:focus {
+    border: .2rem solid var(--bordeFocus);
+    outline: none;
+}
+
+.formulario--input__2:focus {
+    border: .1rem solid var(--borde);
+}
+
+select {
+    padding: 1rem;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+}
+
+header {
+    padding: 2rem;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+}
+
+a {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+label {
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000000;
+    font-size: 2rem;
+}
+
+.superContenedor {
+    display: grid;
+    height: 700px;
+    grid-template-columns: 10;
+    grid-template-rows: 10;
+    gap: 1rem;
+    color: var(--negro);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+@media (min-width: 768px) {
+    .titulo {
+        grid-column: 1/8;
+        grid-row: 5;
+    }
+    .descripcion {
+        grid-column: 1/8;
+        grid-row: 6;
+        margin-top: -32.5rem;
+    }
+    .punteo {
+        grid-column: 1/3;
+        grid-row: 6;
+        margin-top: -25rem;
+    }
+    .contenedor {
+        grid-column: 8/10;
+        grid-row: 5/6;
+    }
+}
+
+.contenedor {
+    max-width: auto;
+    min-width: 20%;
+    width: 95%;
+    border-radius: 1rem;
+    border-width: 0.1rem;
+    background-color: #8ef2dc;
+    align-items: center;
+    margin: 0 auto 10rem auto;
+}
+
+
+/* Formulario */
+
+.form {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 2rem;
+    border-radius: .4rem;
+    text-align: center;
+    align-items: center;
+    margin-top: -3rem;
+}
+
+.form_1 {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 12;
+    gap: 1rem;
+    color: var(--negro);
+}
+
+@media (min-width: 768px) {
+    .formulario--input__1 {
+        grid-column: 1;
+        grid-row: 1;
+        height: 4rem;
+        width: 100%;
+    }
+    .formulario--input__2 {
+        grid-column: 1;
+        grid-row: 2;
+        height: 4rem;
+        width: 100%;
+    }
+    .divcheck {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .botonSubmit {
+        grid-column: 1;
+        grid-row: 4;
+        height: 4rem;
+    }
+}
+
+.boxdiv {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 12;
+    gap: 1rem;
+    color: var(--negro);
+}
+
+@media (min-width: 768px) {
+    .cbox1 {
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+    .labelbox {
+        grid-column: 3/5;
+        grid-row: 1;
+    }
+}
+
+.cbox1 {
+    height: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 2rem;
+}
+
+.labelbox {
+    height: auto;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: -1rem;
+}
+
+.boton {
+    justify-content: center;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(0, 0, 255);
+    color: white;
+    border-color: rgb(0, 0, 255);
+}
+
+
+/* Envio de formulario */
+
+.enviado {
+    color: #070707;
+    background-color: #9E2F31;
+}
