@@ -1,0 +1,82 @@
+{% extends "frontweb/header.html" %} {% load static %} {% block head %}
+<link
+  rel="preload"
+  href="{% static 'frontweb/css/cierremensual-style.css' %}"
+  as="style"
+/>
+<link
+  rel="stylesheet"
+  href="{% static 'frontweb/css/cierremensual-style.css' %}"
+/>
+<link
+  rel="preload"
+  href="{% static 'frontweb/css/cierremensual-paginator-style.css' %}"
+  as="style"
+/>
+<link
+  rel="stylesheet"
+  href="{% static 'frontweb/css/cierremensual-paginator-style.css' %}"
+/>
+{% endblock%} {% block content%}
+
+<div class="titulo">
+  <h1>Cierre Mensual</h1>
+</div>
+<div class='paginacion'>
+  <div class='num'>
+    {% include 'frontweb/paginator.html' %}
+  </div>
+</div>
+<div class="tabla">
+  <table class="tabl">
+    <thead>
+      <tr>
+        <th>Código Insumo</th>
+        <th>Denominación</th>
+        <th>Precio</th>
+        <th>Saldo</th>
+        <th>Fecha</th>
+        <th>Unidad Despacho</th>
+        <th>Cuenta presupuestaria</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cierremensual in entity %}
+      <tr>
+        {% for insumo in insumos %}
+        {% if insumo == cierremensual.fk_id_insumos %}
+        <td>{{insumo.codigo_insumo}}</td>
+        <td class="den">{{insumo.denominacion}}</td>
+        {% endif %} 
+        {% endfor %}
+        <td>{{cierremensual.precio}}</td>
+        <td>{{cierremensual.saldo}}</td>
+
+        {% for fecha in cierrefecha %}
+        {% if fecha == cierremensual.fk_id_cierre_mensual %}
+        <td>{{fecha.fecha_cierre_mensual}}</td>
+        {% endif %} 
+        {% endfor %}
+        
+        {% for insumo in insumos %}
+        {% if insumo == cierremensual.fk_id_insumos %}
+
+        {% for unidad in unidades %}
+        {% if unidad == insumo.fk_id_unidad_medida %}
+        <td>{{unidad.nombre_unidad_medida}}</td>
+        {% endif %}
+        {% endfor %}
+        {% for categoria in categorias %}
+        {% if categoria == insumo.fk_id_categoria %}
+        <td>{{categoria.nombre_categoria}}</td>
+        {% endif %}
+        {% endfor %}
+        {% endif %} 
+        {% endfor %}
+
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

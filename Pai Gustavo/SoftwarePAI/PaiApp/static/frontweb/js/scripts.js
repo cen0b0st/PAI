@@ -74,11 +74,11 @@ function mensualclose() {
     let obtenerDatos = document.getElementsByTagName('td');
     let insumoid = []
     var id = ""
-    for (let i = 5; i < obtenerDatos.length; i += 7) {
+    for (let i = 0; i < obtenerDatos.length; i += 7) {
         insumoid.push(obtenerDatos[i]);
     }
     for (let i = 0; i < insumoid.length; i++) {
-        id = id + "_" + insumoid[i].getAttribute('id');
+        id = id + "*" + insumoid[i].getAttribute('id');
     }
     $.ajax({
         url: window.location.pathname,

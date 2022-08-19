@@ -107,7 +107,6 @@ class CierreMensualInsumo(models.Model):
     estado = models.IntegerField()
     fk_id_cierre_mensual = models.ForeignKey(CierreMensual, models.DO_NOTHING, db_column='fk_id_cierre_mensual')
     fk_id_insumos = models.ForeignKey('Insumos', models.DO_NOTHING, db_column='fk_id_insumos')
-    fk_id_categoria = models.ForeignKey(Categoria, models.DO_NOTHING, db_column='fk_id_categoria')
 
     class Meta:
         managed = False

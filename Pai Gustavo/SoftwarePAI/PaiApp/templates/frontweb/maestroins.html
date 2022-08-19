@@ -3,6 +3,8 @@
 {% block head %}
 <link rel="preload" href="{% static 'frontweb/css/maestroins-style.css' %}" as="style" />
 <link rel="stylesheet" href="{% static 'frontweb/css/maestroins-style.css' %}" />
+<link rel="preload" href="{% static 'frontweb/css/maestroins-paginator-style.css' %}" as="style" />
+<link rel="stylesheet" href="{% static 'frontweb/css/maestroins-paginator-style.css' %}" />
 {% endblock%}
 
 {% block content%}
@@ -23,10 +25,16 @@
       <input type="search" class='buscar' placeholder="Buscar" />
     </div>
   </form>
+<div class='paginacion'>
+  <div class='num'>
+    {% include 'frontweb/paginator.html' %}
+  </div>
+</div>
+
   <button type='button' class='cierremensual' onclick='mensualclose()'>Cierre Mensual</button>
 </div>
 <div class='tabla'>
-  <table>
+  <table class='tabl'>
     <thead>
       <tr>
         <th>Código</th>
@@ -39,9 +47,9 @@
       </tr>
     </thead>
     <tbody>
-      {% for insumo in insumos %}
+      {% for insumo in entity %}
       <tr>
-        <td>{{insumo.codigo_insumo}}</td>
+        <td id='{{insumo.id_insumos}}_{{insumo.saldo}}_{{insumo.precio}}'>{{insumo.codigo_insumo}}</td>
         <td class='den'>{{insumo.denominacion}}</td>
         {% for unidad in unidades %}
         {% if unidad == insumo.fk_id_unidad_medida %}
@@ -54,7 +62,7 @@
 
         {% for categoria in categorias %}
         {% if categoria == insumo.fk_id_categoria %}
-        <td id='{{insumo.id_insumos}}-{{insumo.saldo}}-{{insumo.precio}}-{{categoria.id_categoria}}'>{{categoria.nombre_categoria}}</td>
+        <td>{{categoria.nombre_categoria}}</td>
         {% endif %}
         {% endfor %}
 
